@@ -1,14 +1,12 @@
-<input type=text [(ngModel)]="name">
-<p>{{name}}</p>
-<button mat-fab>
-    <mat-form-field>
-        <mat-select placeholder="Favorite food">
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-
-
-</button>
+<app-header></app-header>
+<h2>test ph</h2>
+<app-recipes></app-recipes>
+<app-shoping-list></app-shoping-list>
+<div fxLayout="row">
+    <div fxFlex="40">
+        <app-recipe-list></app-recipe-list>
+    </div>
+    <div fxFlex="60">
+        <app-recipe-detail></app-recipe-detail>
+    </div>
+</div>
