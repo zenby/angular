@@ -4,17 +4,17 @@
       <div fxLayout="row" fxLayoutGap="16px">
         <div fxFlex="45%" class="form-input-container">
           <mat-form-field>
-            <input matInput placeholder="name">
+            <input matInput placeholder="name" #nameInput>
           </mat-form-field>
         </div>
         <div fxFlex="55%" class="form-input-container">
           <mat-form-field>
-            <input matInput type="number" min="0" placeholder="amount">
+            <input matInput type="number" min="0" placeholder="amount" #amountInput>
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" fxLayoutGap="8px">
-        <button mat-raised-button color="primary">Add</button>
+        <button mat-raised-button color="primary" (click)="onAddIngredient()">Add</button>
         <button mat-raised-button color="accent">Delete</button>
         <button mat-raised-button>Clear</button>
       </div>
