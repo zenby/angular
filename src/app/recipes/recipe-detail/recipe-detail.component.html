@@ -1,11 +1,11 @@
 <div fxLayout="row">
   <div fxFlex="100%">
-    <img src="" alt="" class="img-responsive">
+    <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive">
   </div>
 </div>
 <div fxLayout="row">
   <div fxFlex="100%">
-    <h1>Recipe name</h1>
+    <h1>{{recipe.name}}</h1>
   </div>
 </div>
 <div fxLayout="row">
@@ -23,7 +23,7 @@
 </div>
 <div fxLayout="row">
   <div fxFlex="100%">
-    Description
+    {{recipe.desc}}
   </div>
 </div>
 <div fxLayout="row">
