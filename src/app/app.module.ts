@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -39,7 +40,7 @@ import { ShopingEditComponent } from './shoping-list/shoping-edit/shoping-edit.c
     FormsModule,
     FlexLayoutModule,
     MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule,
-    MatCardModule, MatMenuModule, MatIconModule, MatListModule, MatFormFieldModule
+    MatCardModule, MatMenuModule, MatIconModule, MatListModule, MatFormFieldModule, MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
