@@ -5,9 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -34,7 +38,8 @@ import { ShopingEditComponent } from './shoping-list/shoping-edit/shoping-edit.c
     BrowserModule,
     FormsModule,
     FlexLayoutModule,
-    MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule, MatCardModule
+    MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule,
+    MatCardModule, MatMenuModule, MatIconModule, MatListModule, MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

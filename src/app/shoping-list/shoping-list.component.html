@@ -2,6 +2,12 @@
   <div fxFlex="80%">
     <app-shoping-edit></app-shoping-edit>
     <hr>
-    <p>The list</p>
+    <mat-card>
+      <mat-list>
+        <mat-list-item *ngFor="let ingredient of ingredients">
+          {{ingredient.name}} {{ingredient.amount}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
   </div>
 </div>
