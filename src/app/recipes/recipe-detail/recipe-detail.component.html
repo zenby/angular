@@ -15,7 +15,7 @@
       <mat-icon svgIcon="thumbs-up"></mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>To shopping list</button>
+      <button mat-menu-item (click)="onAddToShopingList()">To shopping list</button>
       <button mat-menu-item>Edit recipe</button>
       <button mat-menu-item>Delete recipe</button>
     </mat-menu>
