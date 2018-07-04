@@ -28,6 +28,10 @@
 </div>
 <div fxLayout="row">
   <div fxFlex="100%">
-    Ingredients
+    <mat-list>
+      <mat-list-item *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.name}} {{ingredient.amount}}
+      </mat-list-item>
+    </mat-list>
   </div>
 </div>
