@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -40,6 +41,7 @@ import { ShoppingListService } from './shoping-list/shoping-list.service';
     BrowserModule,
     FormsModule,
     FlexLayoutModule,
+    AppRoutingModule,
     MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule,
     MatCardModule, MatMenuModule, MatIconModule, MatListModule, MatFormFieldModule, MatTabsModule
   ],
