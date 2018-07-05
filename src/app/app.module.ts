@@ -25,6 +25,7 @@ import { ShopingListComponent } from './shoping-list/shoping-list.component';
 import { ShopingEditComponent } from './shoping-list/shoping-edit/shoping-edit.component';
 import { ShoppingListService } from './shoping-list/shoping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
     RecipeItemComponent,
     ShopingListComponent,
     ShopingEditComponent,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserAnimationsModule,
