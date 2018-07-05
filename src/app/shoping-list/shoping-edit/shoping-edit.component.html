@@ -1,20 +1,20 @@
 <div fxLayout="row">
   <div fxFlex="100%">
-    <form>
+    <form (ngSubmit)="onAddIngredient(f)" #f="ngForm">
       <div fxLayout="row" fxLayoutGap="16px">
         <div fxFlex="45%" class="form-input-container">
           <mat-form-field>
-            <input matInput placeholder="name" #nameInput>
+            <input matInput placeholder="name" name="name" ngModel>
           </mat-form-field>
         </div>
         <div fxFlex="55%" class="form-input-container">
           <mat-form-field>
-            <input matInput type="number" min="0" placeholder="amount" #amountInput>
+            <input matInput type="number" min="0" placeholder="amount" name="amount" ngModel>
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" fxLayoutGap="8px">
-        <button mat-raised-button color="primary" (click)="onAddIngredient()">Add</button>
+        <button mat-raised-button color="primary">Add</button>
         <button mat-raised-button color="accent">Delete</button>
         <button mat-raised-button>Clear</button>
       </div>
