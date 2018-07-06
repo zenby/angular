@@ -2,15 +2,17 @@ import { ShoppingListService } from './../shoping-list/shoping-list.service';
 import { Ingredient } from './../shared/ingredient.model';
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecipeService {
+  recipeChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
     new Recipe('Test recipe',
       'simply',
       'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/chilli-glazed_sticky_71707_16x9.jpg',
-      [new Ingredient('Meat', 1), new Ingredient('Fardh', 3)]
+      [new Ingredient('Meat', 1), new Ingredient('Farsh', 3)]
     ),
     new Recipe('Test 2 recipe',
       'nail',
@@ -19,7 +21,8 @@ export class RecipeService {
     ),
   ];
 
-  constructor(private slService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService) {
+  }
 
   getRecipes() {
     return this.recipes.slice();
@@ -31,5 +34,15 @@ export class RecipeService {
 
   getRecipeById(id: number) {
     return this.recipes.slice()[id];
+  }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipeChanged.next(this.recipes.slice());
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipeChanged.next(this.recipes.slice());
   }
 }
