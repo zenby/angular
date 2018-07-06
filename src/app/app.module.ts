@@ -4,16 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatTabsModule } from '@angular/material/tabs';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -27,6 +17,8 @@ import { ShoppingListService } from './shoping-list/shoping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
+
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -48,8 +40,7 @@ import { RecipeService } from './recipes/recipe.service';
     ReactiveFormsModule,
     FlexLayoutModule,
     AppRoutingModule,
-    MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule,
-    MatCardModule, MatMenuModule, MatIconModule, MatListModule, MatFormFieldModule, MatTabsModule
+    MaterialModule
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
