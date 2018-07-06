@@ -47,13 +47,16 @@
         </div>
       </div>
       <div fxLayout="row">
-        <div fxFlex="100%">
-          <div fxLayout="row" fxLayoutGap="16px">
+        <div fxFlex="100%" formArrayName="ingredients">
+          <div fxLayout="row" fxLayoutGap="16px"
+               *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
+               [formGroupName]="i">
             <div fxFlex="70%" class="input-container" fxLayoutGap="16px">
               <mat-form-field>
                 <input
                   matInput
                   placeholder="Name"
+                  formControlName="name"
                 >
               </mat-form-field>
             </div>
@@ -62,11 +65,12 @@
                 <input
                   matInput
                   placeholder="amount"
+                  formControlName="amount"
                 >
               </mat-form-field>
             </div>
             <div fxFlex="15%" fxLayoutGap="16px">
-              <button mat-raised-button color="accent" type="button">X</button>
+              <button mat-mini-fab color="accent" type="button">X</button>
             </div>
           </div>
         </div>
