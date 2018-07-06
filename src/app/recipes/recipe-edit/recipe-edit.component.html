@@ -3,7 +3,12 @@
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <div fxLayout="row">
         <div fxFlex="100%" fxLayoutGap="16px">
-          <button mat-raised-button color="primary" type="submit">Save</button>
+          <button mat-raised-button
+                  color="primary"
+                  type="submit"
+                  [disabled]="!recipeForm.valid"
+          >Save
+          </button>
           <button mat-raised-button color="accent" type="button">Cancel</button>
         </div>
       </div>
@@ -15,6 +20,7 @@
               formControlName="name"
               placeholder="Name"
             >
+            <mat-error>Error name</mat-error>
           </mat-form-field>
         </div>
       </div>
