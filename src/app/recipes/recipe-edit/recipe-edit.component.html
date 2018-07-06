@@ -1,3 +1,76 @@
-<p>
-  recipe-edit works!
-</p>
+<div fxLayout="row">
+  <div fxFlex="100%">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="row">
+        <div fxFlex="100%" fxLayoutGap="16px">
+          <button mat-raised-button color="primary" type="submit">Save</button>
+          <button mat-raised-button color="accent" type="button">Cancel</button>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="100%" class="input-container" fxLayoutGap="16px">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="name"
+              placeholder="Name"
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="100%" class="input-container" fxLayoutGap="16px">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="imagePath"
+              placeholder="ImagePath"
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="100%">
+          <img src="" class="mat-calendar">
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="100%" class="input-container" fxLayoutGap="16px">
+          <mat-form-field>
+            <textarea
+              matInput
+              formControlName="description"
+              placeholder="Description"
+              rows="6"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="100%">
+          <div fxLayout="row" fxLayoutGap="16px">
+            <div fxFlex="70%" class="input-container" fxLayoutGap="16px">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Name"
+                >
+              </mat-form-field>
+            </div>
+            <div fxFlex="15%" class="input-container" fxLayoutGap="16px">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="amount"
+                >
+              </mat-form-field>
+            </div>
+            <div fxFlex="15%" fxLayoutGap="16px">
+              <button mat-raised-button color="accent" type="button">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

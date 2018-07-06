@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" fxLayout="row">
   <div fxFlex="40%">
     <app-recipe-list></app-recipe-list>
   </div>
@@ -6,7 +6,7 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-<!-- 
+<!--
 <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipe]="selectedRecipe"></app-recipe-detail>
     <ng-template #infoText>
       Please select a recipe!
