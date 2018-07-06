@@ -36,13 +36,14 @@
               matInput
               formControlName="imagePath"
               placeholder="ImagePath"
+              #imagePath
             >
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row">
         <div fxFlex="100%">
-          <img src="" class="mat-calendar">
+          <img [src]="imagePath.value" class="mat-calendar">
         </div>
       </div>
       <div fxLayout="row">

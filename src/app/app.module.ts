@@ -26,6 +26,7 @@ import { ShopingEditComponent } from './shoping-list/shoping-edit/shoping-edit.c
 import { ShoppingListService } from './shoping-list/shoping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule,
     MatCardModule, MatMenuModule, MatIconModule, MatListModule, MatFormFieldModule, MatTabsModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
