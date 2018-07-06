@@ -6,10 +6,15 @@
           <button mat-raised-button
                   color="primary"
                   type="submit"
-                  [disabled]="!recipeForm.valid"
-          >Save
+                  [disabled]="!recipeForm.valid">
+            Save
           </button>
-          <button mat-raised-button color="accent" type="button">Cancel</button>
+          <button mat-raised-button
+                  color="accent"
+                  (click)="onCancel()"
+                  type="button">
+            Cancel
+          </button>
         </div>
       </div>
       <div fxLayout="row">
@@ -76,7 +81,7 @@
               </mat-form-field>
             </div>
             <div fxFlex="15%" fxLayoutGap="16px">
-              <button mat-mini-fab color="accent" type="button">X</button>
+              <button mat-mini-fab color="accent" type="button" (click)="onDeleteIngredient(i)">X</button>
             </div>
           </div>
         </div>
