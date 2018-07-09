@@ -6,18 +6,25 @@
   <li>
     <a label="Shopping List" routerLink="/shopping-list" routerLinkActive="active">ShopingList</a>
   </li>
-  <li>
-    <a label="Signup" routerLink="/signup" routerLinkActive="active">Sign up</a>
-  </li>
-  <li>
-    <a label="Signin" routerLink="/signin" routerLinkActive="active">Sign in</a>
-  </li>
-  <li>
-    <a (click)="onSaveData()">Save data</a>
-  </li>
-  <li>
-    <a (click)="onFetchData()">Fetch data</a>
-  </li>
+  <ng-template [ngIf]="!authService.isAuthenticated()">
+    <li>
+      <a label="Signup" routerLink="/signup" routerLinkActive="active">Sign up</a>
+    </li>
+    <li>
+      <a label="Signin" routerLink="/signin" routerLinkActive="active">Sign in</a>
+    </li>
+  </ng-template>
+  <ng-template [ngIf]="authService.isAuthenticated()">
+    <li>
+      <a (click)="onLogout()">Logout</a>
+    </li>
+    <li>
+      <a (click)="onSaveData()">Save data</a>
+    </li>
+    <li>
+      <a (click)="onFetchData()">Fetch data</a>
+    </li>
+  </ng-template>
 </ul>
 <!-- <nav mat-tab-nav-bar>
   <a mat-tab-link [routerLink]="recipes" routerLinkActive="mat-tab-link-active">34</a>
