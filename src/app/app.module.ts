@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -35,7 +35,6 @@ import { RecipesModule } from './recipes/recipes.module';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
     FlexLayoutModule,
     AppRoutingModule,
     MaterialModule,
