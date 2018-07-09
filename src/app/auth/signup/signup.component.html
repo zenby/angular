@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="24px">
+      <div fxFlex="45%">
+        <mat-form-field>
+          <input
+            matInput
+            name="email"
+            placeholder="email"
+            ngModel
+          >
+        </mat-form-field>
+      </div>
+      <div fxFlex="45%">
+        <mat-form-field>
+          <input
+            matInput
+            name="password"
+            placeholder="password"
+            ngModel
+          >
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button type="submit" color="primary">Sign Up</button>
+  </form>
+</div>
