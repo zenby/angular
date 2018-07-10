@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexLayoutModule
   ],
   declarations: [],
   exports: [
@@ -38,7 +40,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexLayoutModule
   ]
 })
 export class MaterialModule {

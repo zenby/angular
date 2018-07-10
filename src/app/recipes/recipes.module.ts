@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from '../shared/material.module';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
@@ -24,7 +23,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule,
     RecipesRoutingModule,
     ReactiveFormsModule,
   ]
