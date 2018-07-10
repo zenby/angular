@@ -12,19 +12,16 @@ import { RecipeService } from './recipes/recipe.service';
 import { DataStorageService } from './shared/data-storage.service';
 
 import { MaterialModule } from './shared/material.module';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShopingListModule } from './shoping-list/shoping-list.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SignupComponent,
-    SigninComponent
   ],
   imports: [
     ShopingListModule,
@@ -34,7 +31,8 @@ import { ShopingListModule } from './shoping-list/shoping-list.module';
     FlexLayoutModule,
     AppRoutingModule,
     MaterialModule,
-    RecipesModule
+    RecipesModule,
+    AuthModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
