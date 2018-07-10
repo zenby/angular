@@ -6,7 +6,7 @@
   <li>
     <a label="Shopping List" routerLink="/shopping-list" routerLinkActive="active">ShopingList</a>
   </li>
-  <ng-template [ngIf]="!authService.isAuthenticated()">
+  <ng-template [ngIf]="!isAuthenticated()">
     <li>
       <a label="Signup" routerLink="/signup" routerLinkActive="active">Sign up</a>
     </li>
@@ -14,7 +14,7 @@
       <a label="Signin" routerLink="/signin" routerLinkActive="active">Sign in</a>
     </li>
   </ng-template>
-  <ng-template [ngIf]="authService.isAuthenticated()">
+  <ng-template [ngIf]="isAuthenticated()">
     <li>
       <a (click)="onLogout()">Logout</a>
     </li>
