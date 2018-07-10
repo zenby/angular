@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { ShoppingListService } from './shoping-list/shoping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { DataStorageService } from './shared/data-storage.service';
@@ -15,13 +14,11 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { ShopingListModule } from './shoping-list/shoping-list.module';
 import { AuthModule } from './auth/auth.module';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
+    AppComponent
   ],
   imports: [
     ShopingListModule,
@@ -30,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
