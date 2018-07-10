@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { RecipeService } from '../recipes/recipe.service';
@@ -17,9 +17,13 @@ export class DataStorageService {
 
   storeRecipes() {
     const token = this.authService.getToken();
-    return this.httpClient.put(URL, this.recipeService.getRecipes(), {
-      params: new HttpParams().set('auth', token)
-    });
+    // return this.httpClient.put(URL, this.recipeService.getRecipes(), {
+    //   params: new HttpParams().set('auth', token)
+    // });
+
+    const req = new HttpRequest('PUT', URL, this.recipeService.getRecipes(),
+      {reportProgress: true, params: new HttpParams().set('auth', token)});
+    return this.httpClient.request(req);
   }
 
   getRecipes() {
