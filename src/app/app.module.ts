@@ -13,14 +13,15 @@ import { DataStorageService } from './shared/data-storage.service';
 import { MaterialModule } from './shared/material.module';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
-import { RecipesModule } from './recipes/recipes.module';
 import { ShopingListModule } from './shoping-list/shoping-list.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     ShopingListModule,
@@ -29,7 +30,6 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    RecipesModule,
     AuthModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
