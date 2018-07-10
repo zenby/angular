@@ -23,11 +23,4 @@ export class ShoppingListService {
     this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
-
-  addIngredients(ingredients: Ingredient[]) {
-    // for (const ingredient of shopingListState) {
-    //   this.addIngredient(ingredient);
-    this.ingredients.push(...ingredients);
-    this.ingredientsChanged.next(this.ingredients.slice());
-  }
 }
