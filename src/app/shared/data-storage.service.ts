@@ -21,8 +21,7 @@ export class DataStorageService {
     //   params: new HttpParams().set('auth', token)
     // });
 
-    const req = new HttpRequest('PUT', URL, this.recipeService.getRecipes(),
-      {reportProgress: true, params: new HttpParams().set('auth', token)});
+    const req = new HttpRequest('PUT', URL, this.recipeService.getRecipes(), {reportProgress: true});
     return this.httpClient.request(req);
   }
 
