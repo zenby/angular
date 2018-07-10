@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { AuthGuard } from '../auth/auth-guard.service';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
@@ -20,7 +21,8 @@ const recipesRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(recipesRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class RecipesRoutingModule {
 
