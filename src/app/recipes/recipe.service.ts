@@ -1,5 +1,5 @@
-import { ShoppingListService } from './../shoping-list/shoping-list.service';
-import { Ingredient } from './../shared/ingredient.model';
+import { ShoppingListService } from '../shoping-list/shoping-list.service';
+import { Ingredient } from '../shared/ingredient.model';
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Subject } from 'rxjs';

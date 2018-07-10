@@ -34,7 +34,7 @@ export class DataStorageService {
         map(
           (recipes) => {
             for (const recipe of recipes) {
-              if (!recipe.ingredients) {
+              if (!recipe.shopingListState) {
                 recipe.ingredients = [];
               }
             }

@@ -10,17 +10,8 @@ export class ShoppingListService {
     new Ingredient('Lemons', 3),
   ];
 
-  getIngredients() {
-    return this.ingredients.slice();
-  }
-
   getIngredient(index: number) {
     return this.ingredients[index];
-  }
-
-  addIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
-    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   updateIngredient(index: number, newIngredient: Ingredient) {
@@ -34,7 +25,7 @@ export class ShoppingListService {
   }
 
   addIngredients(ingredients: Ingredient[]) {
-    // for (const ingredient of ingredients) {
+    // for (const ingredient of shopingListState) {
     //   this.addIngredient(ingredient);
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
