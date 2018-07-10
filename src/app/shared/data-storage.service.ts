@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { RecipeService } from '../recipes/recipe.service';
@@ -10,22 +10,29 @@ const URL = 'https://ng-project-c4248.firebaseio.com/data.json';
 
 @Injectable()
 export class DataStorageService {
-  constructor(private http: HttpClient,
+  constructor(private httpClient: HttpClient,
               private recipeService: RecipeService,
               private authService: AuthService) {
   }
 
   storeRecipes() {
     const token = this.authService.getToken();
-    return this.http.put(`${URL}?auth=${token}`, this.recipeService.getRecipes());
+    // return this.httpClient.put(URL, this.recipeService.getRecipes(), {
+    //   params: new HttpParams().set('auth', token)
+    // });
+
+    const req = new HttpRequest('PUT', URL, this.recipeService.getRecipes(), {reportProgress: true});
+    return this.httpClient.request(req);
   }
 
   getRecipes() {
     const token = this.authService.getToken();
-    this.http.get(`${URL}?auth=${token}`)
+    this.httpClient.get<Recipe[]>(URL, {
+      params: new HttpParams().set('auth', token)
+    })
       .pipe(
         map(
-          (recipes: Recipe[]) => {
+          (recipes) => {
             for (const recipe of recipes) {
               if (!recipe.ingredients) {
                 recipe.ingredients = [];
