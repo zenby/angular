@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
-import { RecipeService } from '../recipe.service';
 import * as RecipeActions from '../store/recipe.actions';
 import * as fromRecipe from '../store/recipe.reducers';
 import { take } from 'rxjs/internal/operators';
@@ -20,7 +19,6 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private recipeService: RecipeService,
               private store: Store<fromRecipe.FeatureState>) {
   }
 
@@ -81,7 +79,6 @@ export class RecipeEditComponent implements OnInit {
       }));
     } else {
       this.store.dispatch(new RecipeActions.AddRecipe(this.recipeForm.value));
-      this.recipeService.addRecipe(this.recipeForm.value);
     }
     this.onCancel();
   }

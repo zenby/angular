@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { RecipeService } from '../recipe.service';
 import { take } from 'rxjs/internal/operators';
 import * as ShopingListActions from '../../shoping-list/store/shoping-list.actions';
 import * as fromRecipe from '../store/recipe.reducers';
@@ -19,11 +18,9 @@ export class RecipeDetailComponent implements OnInit {
   id: number;
 
   constructor(
-    private recipeService: RecipeService,
     private route: ActivatedRoute,
     private router: Router,
-    private store: Store<fromRecipe.FeatureState>
-  ) {
+    private store: Store<fromRecipe.FeatureState>) {
   }
 
   ngOnInit() {
@@ -40,7 +37,8 @@ export class RecipeDetailComponent implements OnInit {
     this.store.select('recipes')
       .pipe(take(1))
       .subscribe((recipeState: fromRecipe.State) => {
-          this.store.dispatch(new ShopingListActions.AddIngredients(recipeState.recipes[this.id].ingredients));
+          this.store.dispatch(
+            new ShopingListActions.AddIngredients(recipeState.recipes[this.id].ingredients));
         }
       );
   }
@@ -51,7 +49,6 @@ export class RecipeDetailComponent implements OnInit {
 
   onDeleteRecipe() {
     this.store.dispatch(new RecipeActions.DeleteRecipe(this.id));
-    this.recipeService.deleteRecipe(this.id);
     this.router.navigate(['/recipes']);
   }
 
