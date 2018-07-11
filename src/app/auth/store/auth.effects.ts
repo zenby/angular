@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 import * as AuthActions from './auth.actions';
 import { fromPromise } from 'rxjs/internal/observable/fromPromise';
-import { mergeMap, map, switchMap } from 'rxjs/internal/operators';
+import { mergeMap, map, switchMap, tap } from 'rxjs/internal/operators';
 
 @Injectable()
 export class AuthEffects {
@@ -63,9 +63,17 @@ export class AuthEffects {
       })
     );
 
+
+  @Effect({dispatch: false})
+  authLogout = this.actions$
+    .ofType(AuthActions.LOGOUT)
+    .pipe(
+      tap(() => {
+        this.router.navigate(['/']);
+      })
+    );
+
   constructor(private actions$: Actions,
               private router: Router) {
   }
-
-
 }
