@@ -3,15 +3,16 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { MaterialModule } from './shared/material.module';
 import { ShopingListModule } from './shoping-list/shoping-list.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { reducers } from './store/app.reducers';
+import { AuthEffects } from './auth/store/auth.effects';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { reducers } from './store/app.reducers';
     MaterialModule,
     AuthModule,
     CoreModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AuthEffects])
   ],
   bootstrap: [AppComponent]
 })
