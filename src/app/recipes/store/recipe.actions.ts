@@ -36,5 +36,5 @@ export class DeleteRecipe implements Action {
   }
 }
 
-export type RecipeActions = SetRecipes | AddRecipe | UpdateRecipe | DeleteRecipe;
+export type RecipeActionsType = SetRecipes | AddRecipe | UpdateRecipe | DeleteRecipe;
 
