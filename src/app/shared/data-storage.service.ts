@@ -1,18 +1,16 @@
-import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { map } from 'rxjs/operators';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
-import { AuthService } from '../auth/auth.service';
 
 const URL = 'https://ng-project-c4248.firebaseio.com/data.json';
 
 @Injectable()
 export class DataStorageService {
   constructor(private httpClient: HttpClient,
-              private recipeService: RecipeService,
-              private authService: AuthService) {
+              private recipeService: RecipeService) {
   }
 
   storeRecipes() {
@@ -26,13 +24,11 @@ export class DataStorageService {
   }
 
   getRecipes() {
-    const token = this.authService.getToken();
-    this.httpClient.get<Recipe[]>(URL, {
-      params: new HttpParams().set('auth', token)
-    })
+    this.httpClient.get<Recipe[]>(URL)
       .pipe(
         map(
           (recipes) => {
+            console.log(recipes);
             for (const recipe of recipes) {
               if (!recipe.ingredients) {
                 recipe.ingredients = [];
