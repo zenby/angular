@@ -11,7 +11,7 @@ import { MaterialModule } from './shared/material.module';
 import { ShopingListModule } from './shoping-list/shoping-list.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
-import { shoppingListReducer } from './shoping-list/store/shoping-list.reducers';
+import { reducers } from './store/app.reducers';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { shoppingListReducer } from './shoping-list/store/shoping-list.reducers'
     MaterialModule,
     AuthModule,
     CoreModule,
-    StoreModule.forRoot({shoppingList: shoppingListReducer})
+    StoreModule.forRoot(reducers)
   ],
   bootstrap: [AppComponent]
 })
