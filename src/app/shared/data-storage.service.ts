@@ -14,10 +14,6 @@ export class DataStorageService {
   }
 
   storeRecipes() {
-    // const token = this.authService.getToken();
-    // return this.httpClient.put(URL, this.recipeService.getRecipes(), {
-    //   params: new HttpParams().set('auth', token)
-    // });
 
     const req = new HttpRequest('PUT', URL, this.recipeService.getRecipes(), {reportProgress: true});
     return this.httpClient.request(req);

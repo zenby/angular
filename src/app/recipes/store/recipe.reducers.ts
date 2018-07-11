@@ -32,7 +32,7 @@ export function recipeReducer(state = initialState, action: RecipeActions.Recipe
     case RecipeActions.SET_RECIPES:
       return {
         ...state,
-        recipes: [action.payload]
+        recipes: [...action.payload]
       };
 
     case RecipeActions.ADD_RECIPES:
