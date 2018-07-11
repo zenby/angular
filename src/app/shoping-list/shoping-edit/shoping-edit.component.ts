@@ -65,6 +65,7 @@ export class ShopingEditComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.store.dispatch(new ShopingListActions.StopEdit());
   }
 }
 
