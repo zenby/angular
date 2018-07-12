@@ -1,11 +1,12 @@
 <div fxLayout="row">
   <div fxFlex="100%">
-    <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive">
+    <img [src]="(recipeState | async).recipes[id].imagePath"
+         alt="{{(recipeState | async).recipes[id].name}}" class="img-responsive">
   </div>
 </div>
 <div fxLayout="row">
   <div fxFlex="100%">
-    <h1>{{recipe.name}}</h1>
+    <h1>{{(recipeState | async).recipes[id].name}}</h1>
   </div>
 </div>
 <div fxLayout="row">
@@ -23,13 +24,13 @@
 </div>
 <div fxLayout="row">
   <div fxFlex="100%">
-    {{recipe.description}}
+    {{(recipeState | async).recipes[id].description}}
   </div>
 </div>
 <div fxLayout="row">
   <div fxFlex="100%">
     <mat-list>
-      <mat-list-item *ngFor="let ingredient of recipe.ingredients">
+      <mat-list-item *ngFor="let ingredient of (recipeState | async).recipes[id].ingredients">
         {{ingredient.name}} {{ingredient.amount}}
       </mat-list-item>
     </mat-list>
