@@ -117,6 +117,16 @@ export class ShopingEditComponent implements OnInit, OnDestroy {
     this.editMode = false;
   }
 
+// can be useful to analyze animation event
+  animationStarted(event) {
+    console.log(event);
+  }
+
+// can be useful to analyze animation event
+  animationFinished(event) {
+    console.log(event);
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
