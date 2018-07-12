@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { ShoppingListService } from './shoping-list.service';
 import { Ingredient } from '../shared/ingredient.model';
-import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-shoping-list',
@@ -60,10 +60,16 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
         ]))
       ]),
       transition('* => void', [
-        animate(300, style({
-          transform: 'translateX(100px)',
-          opacity: 0
-        }))
+        // group means that our animations work synchronously not subsequently
+        group([
+          animate(200, style({
+            color: 'red'
+          })),
+          animate(500, style({
+            transform: 'translateX(100px)',
+            opacity: 0
+          }))
+        ])
       ])
     ]),
   ]
