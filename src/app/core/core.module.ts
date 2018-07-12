@@ -11,6 +11,7 @@ import { DataStorageService } from '../shared/data-storage.service';
 import { ShoppingListService } from '../shoping-list/shoping-list.service';
 import { AuthInterceptor } from '../shared/auth.interceptor';
 import { LoggingInterceptor } from '../shared/logging.interceptor';
+import { MaterialModule } from '../shared/material.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoggingInterceptor } from '../shared/logging.interceptor';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     AppRoutingModule
   ],
   exports: [
