@@ -25,7 +25,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     ShopingListModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'ng-app'}),
     AppRoutingModule,
     MaterialModule,
     AuthModule,
