@@ -1,9 +1,10 @@
-import { Subscription } from 'rxjs';
-import { ShoppingListService } from '../shoping-list.service';
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Ingredient } from '../../shared/ingredient.model';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { NgForm } from '@angular/forms';
-import { state, style, trigger } from '@angular/animations';
+import { Subscription } from 'rxjs';
+
+import { ShoppingListService } from '../shoping-list.service';
+import { Ingredient } from '../../shared/ingredient.model';
 
 const STATES = {
   highlight: 'highlight',
@@ -23,7 +24,9 @@ const STATES = {
       state(STATES.highlight, style({
         backgroundColor: 'blue',
         transform: 'translateX(100px)'
-      }))
+      })),
+      transition(`${STATES.normal} => ${STATES.highlight}`, animate(300)),
+      transition(`${STATES.highlight} => ${STATES.normal}`, animate(800)),
     ])
   ]
 })
