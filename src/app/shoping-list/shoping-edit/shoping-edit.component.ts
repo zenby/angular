@@ -3,11 +3,29 @@ import { ShoppingListService } from '../shoping-list.service';
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Ingredient } from '../../shared/ingredient.model';
 import { NgForm } from '@angular/forms';
+import { state, style, trigger } from '@angular/animations';
+
+const STATES = {
+  highlight: 'highlight',
+  normal: 'normal'
+};
 
 @Component({
   selector: 'app-shoping-edit',
   templateUrl: './shoping-edit.component.html',
-  styleUrls: ['./shoping-edit.component.css']
+  styleUrls: ['./shoping-edit.component.css'],
+  animations: [
+    trigger('divState', [
+      state(STATES.normal, style({
+        'background-color': 'red',
+        transform: 'translateX(0)'
+      })),
+      state(STATES.highlight, style({
+        backgroundColor: 'blue',
+        transform: 'translateX(100px)'
+      }))
+    ])
+  ]
 })
 export class ShopingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f') slForm: NgForm;
@@ -15,6 +33,7 @@ export class ShopingEditComponent implements OnInit, OnDestroy {
   editMode = false;
   editedItemIndex: number;
   editedItem: Ingredient;
+  state = STATES.highlight;
 
   constructor(private slService: ShoppingListService) {
   }
@@ -32,6 +51,12 @@ export class ShopingEditComponent implements OnInit, OnDestroy {
           });
         }
       );
+  }
+
+  onAnimate() {
+    this.state === STATES.normal
+      ? this.state = STATES.highlight
+      : this.state = STATES.normal;
   }
 
   onSubmit(form: NgForm) {
@@ -54,6 +79,7 @@ export class ShopingEditComponent implements OnInit, OnDestroy {
   onClear() {
     this.slForm.reset();
     this.editMode = false;
+    this.onAnimate();
   }
 
   ngOnDestroy() {
