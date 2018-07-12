@@ -1,1 +1,17 @@
 <h2>Welcome to the Recipe book</h2>
+<h4>Try to toggle rectangles</h4>
+
+<button type="button" mat-raised-button (click)="onAnimate()">Animate</button>
+<button type="button" mat-raised-button (click)="onShrink()">Shrink</button>
+
+<div style="width: 100px; height: 100px; margin: 20px"
+     (@divState.start)="animationStarted($event)"
+     (@divState.done)="animationFinished($event)"
+     [@divState]="state">
+
+</div>
+<br>
+<div style="width: 100px; height: 100px; margin: 20px"
+     [@wildState]="wildState">
+
+</div>

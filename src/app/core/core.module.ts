@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AuthInterceptor } from '../shared/auth.interceptor';
 import { LoggingInterceptor } from '../shared/logging.interceptor';
+import { MaterialModule } from '../shared/material.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LoggingInterceptor } from '../shared/logging.interceptor';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     AppRoutingModule
   ],
   exports: [
