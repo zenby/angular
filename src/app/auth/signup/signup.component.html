@@ -1,4 +1,6 @@
-<h3>Sign up</h3>
+<div class="header">
+  <h3>Sign up</h3>
+</div>
 <div fxLayout="row" fxLayoutAlign="center center">
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="24px">
@@ -24,6 +26,8 @@
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button type="submit" color="primary">Sign Up</button>
+    <div dir="rtl">
+      <button mat-raised-button type="submit" color="primary">Sign Up</button>
+    </div>
   </form>
 </div>

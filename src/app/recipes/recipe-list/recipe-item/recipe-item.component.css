@@ -2,3 +2,21 @@
 .active {
   background-color: rgb(170, 216, 247);
 }
+
+.card {
+  font-size: 12px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.image-container {
+  max-height: 100px;
+}
+
+.fade {
+  color: cadetblue;
+}

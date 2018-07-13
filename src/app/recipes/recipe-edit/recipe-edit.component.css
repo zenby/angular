@@ -2,3 +2,19 @@
 .input-container > * {
   width: 100%;
 }
+
+.image-container {
+  justify-content: center;
+  margin: 24px;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
