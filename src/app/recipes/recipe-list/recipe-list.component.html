@@ -4,7 +4,6 @@
 <div fxLayout="column" fxLayoutGap="16px">
   <app-recipe-item *ngFor="let recipeEl of (recipeState | async).recipes; let i = index"
                    [recipe]="recipeEl"
-                   [@recipeState]="'state'"
                    [index]="i">
   </app-recipe-item>
 </div>

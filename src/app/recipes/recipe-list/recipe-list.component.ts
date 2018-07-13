@@ -12,18 +12,18 @@ import * as RecipeActions from '../store/recipe.actions';
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
-  animations: [
-    trigger('recipeState', [
-      state('in', style({
-        opacity: 1,
-      })),
-      transition('* => void', [
-        animate(300, style({
-          opacity: 0
-        }))
-      ])
-    ])
-  ]
+  // animations: [
+  //   trigger('recipeState', [
+  //     state('in', style({
+  //       opacity: 1,
+  //     })),
+  //     transition('* => void', [
+  //       animate(300, style({
+  //         opacity: 0
+  //       }))
+  //     ])
+  //   ])
+  // ]
 })
 export class RecipeListComponent implements OnInit {
   recipeState: Observable<fromRecipe.State>;
