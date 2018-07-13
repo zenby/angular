@@ -1,4 +1,4 @@
-<div class="button-container">
+<div *ngIf="(authState | async).authenticated" class="button-container">
   <button mat-raised-button color="primary" (click)="onNewRecipe()">New recipe</button>
 </div>
 <div fxLayout="column" fxLayoutGap="16px">

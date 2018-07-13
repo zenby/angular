@@ -9,7 +9,7 @@
     <h1>{{(recipeState | async).recipes[id].name}}</h1>
   </div>
 </div>
-<div fxLayout="row">
+<div fxLayout="row" *ngIf="(authState | async).authenticated">
   <div fxFlex="100%">
     <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
       Manage recipe
