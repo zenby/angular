@@ -5,6 +5,8 @@
 
 .card {
   font-size: 12px;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 img {
