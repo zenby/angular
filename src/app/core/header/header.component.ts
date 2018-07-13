@@ -32,10 +32,6 @@ export class HeaderComponent implements OnInit {
     this.store.dispatch(new RecipeActions.StoreRecipes());
   }
 
-  onFetchData() {
-    this.store.dispatch(new RecipeActions.FetchRecipes());
-  }
-
   onLogout() {
     this.store.dispatch(new AuthActions.Logout());
   }

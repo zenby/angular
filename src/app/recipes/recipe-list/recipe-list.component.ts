@@ -6,6 +6,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 import * as fromRecipe from '../store/recipe.reducers';
 import * as fromAuth from '../../auth/store/auth.reducers';
+import * as RecipeActions from '../store/recipe.actions';
 
 @Component({
   selector: 'app-recipe-list',
@@ -32,13 +33,14 @@ export class RecipeListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private store: Store<fromRecipe.FeatureState>,
-    private authStore: Store<fromAuth.State>
+    private authStore: Store<fromAuth.State>,
   ) {
   }
 
   ngOnInit() {
     this.recipeState = this.store.select('recipes');
     this.authState = this.authStore.select('auth');
+    this.store.dispatch(new RecipeActions.FetchRecipes());
   }
 
   onNewRecipe() {

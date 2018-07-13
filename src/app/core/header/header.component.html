@@ -19,6 +19,5 @@
   <ng-template [ngIf]="(authState | async).authenticated">
     <a mat-tab-link (click)="onLogout()">Logout</a>
     <a mat-tab-link (click)="onSaveData()">Save data</a>
-    <a mat-tab-link (click)="onFetchData()">Fetch data</a>
   </ng-template>
 </nav>
