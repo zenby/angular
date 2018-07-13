@@ -7,6 +7,7 @@ import { take } from 'rxjs/internal/operators';
 import * as ShopingListActions from '../../shoping-list/store/shoping-list.actions';
 import * as fromRecipe from '../store/recipe.reducers';
 import * as RecipeActions from '../store/recipe.actions';
+import * as fromAuth from '../../auth/store/auth.reducers';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -15,15 +16,18 @@ import * as RecipeActions from '../store/recipe.actions';
 })
 export class RecipeDetailComponent implements OnInit {
   recipeState: Observable<fromRecipe.State>;
+  authState: Observable<fromAuth.State>;
   id: number;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private store: Store<fromRecipe.FeatureState>) {
+    private store: Store<fromRecipe.FeatureState>,
+    private authStore: Store<fromAuth.State>) {
   }
 
   ngOnInit() {
+    this.authState = this.authStore.select('auth');
     this.route.params
       .subscribe(
         (params: Params) => {

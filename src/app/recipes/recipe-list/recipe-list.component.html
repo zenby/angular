@@ -1,8 +1,9 @@
-<div>
+<div *ngIf="(authState | async).authenticated" class="button-container">
   <button mat-raised-button color="primary" (click)="onNewRecipe()">New recipe</button>
 </div>
-<hr>
-<div fxLayout="row" fxLayoutGap="16px">
-  <app-recipe-item *ngFor="let recipeEl of (recipeState | async).recipes; let i = index" [recipe]="recipeEl"
-                   [index]="i"></app-recipe-item>
+<div fxLayout="column" fxLayoutGap="16px">
+  <app-recipe-item *ngFor="let recipeEl of (recipeState | async).recipes; let i = index"
+                   [recipe]="recipeEl"
+                   [index]="i">
+  </app-recipe-item>
 </div>

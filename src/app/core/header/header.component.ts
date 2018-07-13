@@ -10,18 +10,12 @@ import * as RecipeActions from '../../recipes/store/recipe.actions';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: [`
-    .active {
-      background-color: red;
-    }
-
-    a {
-      cursor: pointer;
-    }
-  `]
+  styles: []
 })
 export class HeaderComponent implements OnInit {
   authState: Observable<fromAuth.State>;
+  activeLink: string;
+  links = ['recipes', 'shopping-list', 'signup', 'signin' ];
 
   constructor(private store: Store<fromApp.AppState>) {
   }
@@ -30,12 +24,12 @@ export class HeaderComponent implements OnInit {
     this.authState = this.store.select('auth');
   }
 
-  onSaveData() {
-    this.store.dispatch(new RecipeActions.StoreRecipes());
+  setActiveLink(link: string) {
+    this.activeLink = link;
   }
 
-  onFetchData() {
-    this.store.dispatch(new RecipeActions.FetchRecipes());
+  onSaveData() {
+    this.store.dispatch(new RecipeActions.StoreRecipes());
   }
 
   onLogout() {

@@ -1,4 +1,22 @@
 img {
   max-height: 300px;
   max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.image-container {
+  justify-content: center;
+}
+
+.description-container {
+  margin: 20px 0;
+}
+
+.description {
+  padding: 8px 0 0 16px;
+}
+
+.fade {
+  color: cadetblue;
 }

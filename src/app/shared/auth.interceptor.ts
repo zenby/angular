@@ -20,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
         take(1),
         switchMap((authState: fromAuth.State) => {
           const config = {params: req.params.append('auth', authState.token)};
-          const copiedRequest = req.clone(config);
+          const copiedRequest = req.clone(authState.token ? config : '');
           return next.handle(copiedRequest);
         })
       );

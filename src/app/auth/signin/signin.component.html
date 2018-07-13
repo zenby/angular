@@ -1,6 +1,8 @@
-<h3>Sign in</h3>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <form (ngSubmit)="onSignin(f)" #f="ngForm">
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div class="header">
+    <h3>Sign in</h3>
+  </div>
+  <form (ngSubmit)="onSignin(f)" #f="ngForm" [@signState]="'state'">
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="24px">
       <div fxFlex="45%">
         <mat-form-field>
@@ -24,6 +26,8 @@
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button type="submit" color="primary">Sign In</button>
+    <div dir="rtl">
+      <button mat-raised-button type="submit" color="primary">Sign In</button>
+    </div>
   </form>
 </div>

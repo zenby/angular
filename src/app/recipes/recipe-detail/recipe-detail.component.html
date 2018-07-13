@@ -1,7 +1,7 @@
 <div fxLayout="row">
-  <div fxFlex="100%">
+  <div fxFlex="100%" class="image-container">
     <img [src]="(recipeState | async).recipes[id].imagePath"
-         alt="{{(recipeState | async).recipes[id].name}}" class="img-responsive">
+         alt="{{(recipeState | async).recipes[id].name}}">
   </div>
 </div>
 <div fxLayout="row">
@@ -9,7 +9,7 @@
     <h1>{{(recipeState | async).recipes[id].name}}</h1>
   </div>
 </div>
-<div fxLayout="row">
+<div fxLayout="row" *ngIf="(authState | async).authenticated">
   <div fxFlex="100%">
     <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
       Manage recipe
@@ -22,12 +22,14 @@
     </mat-menu>
   </div>
 </div>
-<div fxLayout="row">
-  <div fxFlex="100%">
+<div fxLayout="column" class="description-container">
+  <div class="fade">Description:</div>
+  <div class="description">
     {{(recipeState | async).recipes[id].description}}
   </div>
 </div>
-<div fxLayout="row">
+<div fxLayout="column">
+  <div class="fade">Ingredients:</div>
   <div fxFlex="100%">
     <mat-list>
       <mat-list-item *ngFor="let ingredient of (recipeState | async).recipes[id].ingredients">

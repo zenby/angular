@@ -1,15 +1,20 @@
-<div fxLayout="row" class="container">
-  <div fxFlex="80%">
-    <app-shoping-edit></app-shoping-edit>
-    <hr>
-    <mat-card>
-      <mat-list>
-        <mat-list-item *ngFor="let ingredient of ingredients; let i = index"
-                       [@list1]
-                       (click)="onEditItem(i)">
-          {{ingredient.name}} {{ingredient.amount}}
-        </mat-list-item>
-      </mat-list>
-    </mat-card>
+<div fxLayout="row" fxLayoutAlign="center" class="container margin-top">
+  <div fxFlex="60%">
+    <h3>Shopping list</h3>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100%">
+        <app-shoping-edit></app-shoping-edit>
+        <mat-card class="margin-top">
+          <mat-list>
+            <mat-list-item *ngFor="let ingredient of (shopingListState | async).ingredients; let i = index"
+                           [@list1]
+                           (click)="onEditItem(i)">
+              {{ingredient.name}} {{ingredient.amount}}
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+    </div>
   </div>
 </div>
+

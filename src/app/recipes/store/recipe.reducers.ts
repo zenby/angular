@@ -1,5 +1,4 @@
 import { Recipe } from '../recipe.model';
-import { Ingredient } from '../../shared/ingredient.model';
 
 import * as RecipeActions from './recipe.actions';
 import * as fromApp from '../../store/app.reducers';
@@ -13,18 +12,7 @@ export interface State {
 }
 
 const initialState: State = {
-  recipes: [
-    new Recipe('Test recipe',
-      'simply',
-      'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/chilli-glazed_sticky_71707_16x9.jpg',
-      [new Ingredient('Meat', 1), new Ingredient('Farsh', 3)]
-    ),
-    new Recipe('Test 2 recipe',
-      'nail',
-      'https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/chilli-glazed_sticky_71707_16x9.jpg',
-      [new Ingredient('Garlick', 1), new Ingredient('Lemon', 3)]
-    ),
-  ]
+  recipes: []
 };
 
 export function recipeReducer(state = initialState, action: RecipeActions.RecipeActionsType) {

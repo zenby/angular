@@ -1,32 +1,23 @@
-<ul>
-  <h3>Recipes</h3>
-  <li>
-    <a label="Recipes" routerLink="/recipes" routerLinkActive="active">Recipes</a>
-  </li>
-  <li>
-    <a label="Shopping List" routerLink="/shopping-list" routerLinkActive="active">ShopingList</a>
-  </li>
+<nav mat-tab-nav-bar backgroundColor="primary">
+  <a mat-tab-link [routerLink]="links[0]"
+     [active]="activeLink===links[0]"
+     (click)="setActiveLink(links[0])">Recipes</a>
+
+  <a mat-tab-link [routerLink]="links[1]"
+     [active]="activeLink===links[1]"
+     (click)="setActiveLink(links[1])">ShopingList</a>
+
   <ng-template [ngIf]="!(authState | async).authenticated">
-    <li>
-      <a label="Signup" routerLink="/signup" routerLinkActive="active">Sign up</a>
-    </li>
-    <li>
-      <a label="Signin" routerLink="/signin" routerLinkActive="active">Sign in</a>
-    </li>
+    <a mat-tab-link [routerLink]="links[2]"
+       [active]="activeLink===links[2]"
+       (click)="setActiveLink(links[2])">Sign up</a>
+
+    <a mat-tab-link [routerLink]="links[3]"
+       [active]="activeLink===links[3]"
+       (click)="setActiveLink(links[3])">Sign in</a>
   </ng-template>
   <ng-template [ngIf]="(authState | async).authenticated">
-    <li>
-      <a (click)="onLogout()">Logout</a>
-    </li>
-    <li>
-      <a (click)="onSaveData()">Save data</a>
-    </li>
-    <li>
-      <a (click)="onFetchData()">Fetch data</a>
-    </li>
+    <a mat-tab-link (click)="onLogout()">Logout</a>
+    <a mat-tab-link (click)="onSaveData()">Save data</a>
   </ng-template>
-</ul>
-<!-- <nav mat-tab-nav-bar>
-  <a mat-tab-link [routerLink]="recipes" routerLinkActive="mat-tab-link-active">34</a>
-  <a mat-tab-link [routerLink]="shopping-list">34</a>
-</nav> -->
+</nav>
