@@ -70,7 +70,9 @@ export class HomeComponent implements OnInit {
   }
 
   onShrink() {
-    this.wildState = STATES.shrunken;
+    this.wildState === STATES.shrunken
+      ? this.wildState = STATES.normal
+      : this.wildState = STATES.shrunken;
   }
 
 // can be useful to analyze animation event
